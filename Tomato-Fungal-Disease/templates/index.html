@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<!--jQuery library--> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!--Latest compiled and minified JavaScript--> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+	<title>My Neural Network Tomato Leaf Classifier</title>
+	<style type="text/css">
+		.header{
+			height: 70px;
+			width: 100%;
+			background: salmon;
+
+		}
+		.head1{
+			height: 70px;
+			width: 70%;
+			float: left;
+		}
+		.head2{
+			height: 70px;
+			width: 30%;
+			float: right;
+		}
+		.footer{
+			height: 70px;
+
+			background: salmon;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="header container">
+		<div class="head1">
+			<div style=" color: white;">
+				<h1 style="font-weight: bolder; font-family: roboto; ">Artificial Neural Network Classifier</h1>
+			</div>
+		</div>
+		<div class="head2">
+			<div style="padding: 15px;" >
+				<a class="btn btn-success" href="#" style="margin-right: 40px;font-size: 20px;">Help</a>
+				<a class="btn btn-success" href="#" style="font-size: 20px;">About</a>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2" style="height: 600px; margin-top: 50px;margin-bottom: 50px;box-shadow: 10px 10px 30px">
+				<div style="margin-top: 30px;font-weight: bolder;font-family: roboto;">
+
+					<center><h1>Healthy vs early blight Tomato Image Classifier</h1></center>
+
+				</div>
+
+				<div style="margin-top: 30px">
+				<center>	
+				<form method="POST" action="/" enctype="multipart/form-data">
+					<input class="btn btn-success" type="file" name="file1" accept=".png, .jpg, .jpeg">
+                    <button type="submit" style="margin-top: 20px;" class="btn btn-danger">Submit</button>
+                </form>
+                </center>
+					
+				</div>
+				<div class="row" style="padding-top: 10px;">
+					<div class="col-xs-4">
+						<center><img src="{{ url_for('static',filename='1.png')}}" height="300px" width="400px"></center>
+
+					</div>
+					<div class="col-xs-4">
+				  
+				
+						<center><img src="{{image12}}" alt="Image Not Choosen Yet..." height="300px" width="300px"></center>
+					<br>
+					<center><h1>{{final_output}}</h1></center>
+					
+					</div> 
+					<div class="col-xs-4">
+						<center><img style=" float: right;"src="{{ url_for('static',filename='1.png')}}" height="300px" width="400px"></center>
+
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+
+
+
+		<div class="footer container">
+			<center><h1>Image Classification with Convolutional Neural Network</h1></center>
+		</div>
+	</body>
+	</html>
